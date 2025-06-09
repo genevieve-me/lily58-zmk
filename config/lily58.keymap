@@ -36,7 +36,12 @@
         scw: shift_caps_word {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&caps_word>;
-            flavor = "hold-preferred";
+            #binding-cells = <2>;
+            continue-list = <UNDERSCORE BACKSPACE DELETE MINUS>;
+            // no effect in default hold-preferred mode
+            // tapping-term-ms = <140>;
+            // only if I have issues with overlaps
+            // flavor = "balanced";
         };
         // hml: home_row_mod_left {
         //     compatible = "zmk,behavior-hold-tap";
