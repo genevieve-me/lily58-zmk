@@ -33,15 +33,16 @@
         };
     };
     behaviors {
+    // https://zmk.dev/docs/development/local-toolchain/setup/container
+    // devicetree error: binding controller <Node /behaviors/shift_caps_word in '/__w/lily58-zmk/lily58-zmk/zephyr/misc/empty_file.c'> for <Node /keymap/default_layer in '/__w/lily58-zmk/lily58-zmk/zephyr/misc/empty_file.c'> lacks binding
         scw: shift_caps_word {
+            display-name = "CapsWord-Mod-Tap";
             compatible = "zmk,behavior-hold-tap,behavior-caps-word";
             bindings = <&kp>, <&caps_word>;
             #binding-cells = <2>;
             continue-list = <UNDERSCORE BACKSPACE DELETE MINUS>;
-            // no effect in default hold-preferred mode
-            // tapping-term-ms = <140>;
-            // only if I have issues with overlaps
-            // flavor = "balanced";
+            tapping-term-ms = <140>;
+            flavor = "balanced";
         };
         // https://getreuer.info/posts/keyboards/faqs/index.html#home-row-mods-are-hard-to-use
         // hml: home_row_mod_left {
