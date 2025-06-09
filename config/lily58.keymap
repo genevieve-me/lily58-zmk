@@ -34,7 +34,7 @@
     };
     behaviors {
         scw: shift_caps_word {
-            compatible = "zmk,behavior-hold-tap";
+            compatible = "zmk,behavior-hold-tap,behavior-caps-word";
             bindings = <&kp>, <&caps_word>;
             #binding-cells = <2>;
             continue-list = <UNDERSCORE BACKSPACE DELETE MINUS>;
@@ -43,6 +43,7 @@
             // only if I have issues with overlaps
             // flavor = "balanced";
         };
+        // https://getreuer.info/posts/keyboards/faqs/index.html#home-row-mods-are-hard-to-use
         // hml: home_row_mod_left {
         //     compatible = "zmk,behavior-hold-tap";
         //     flavor = "balanced";
